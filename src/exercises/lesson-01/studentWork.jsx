@@ -1,8 +1,6 @@
 //Lesson-01 Introduction to React
 //Exercise: Build an "About Me" Component in this file
 
-import { data } from 'react-router-dom';
-
 export default function StudentWork() {
   //add variables here
   const name = 'Olena Salnikova';
