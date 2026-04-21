@@ -14,11 +14,12 @@ export default function BugEffectLoop() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    setCount(count + 1);
-  });
+    setCount((prevCount) => prevCount + 1);
+  }, []);
 
   return <p>Bug 1 Count: {count}</p>;
 }
 
 // Explanation:
-// (Write your explanation here)
+// Without the array, the effect ran every render; with [], it only runs on mount.
+// Using setCount(prevCount => prevCount + 1) ensures that the update is based on the latest value.

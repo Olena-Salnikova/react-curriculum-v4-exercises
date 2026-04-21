@@ -12,11 +12,12 @@
   Use the commented "Explanation" section at the bottom of this lesson's components.
 */
 
+import { useState } from 'react';
 export default function BugProps({ name = 'friend' }) {
-  let message = 'Hello, ' + name;
+  const [message, setMessage] = useState('Hello, ' + name);
 
   function handleChange() {
-    message = 'Hi, ' + name + '!';
+    setMessage('Hi, ' + name + '!');
   }
 
   return (
@@ -28,4 +29,6 @@ export default function BugProps({ name = 'friend' }) {
 }
 
 // Explanation:
-// (Write your explanation here)
+// In React, you shouldn’t use plain variables for UI data, only state.
+// The original code used a plain variable for message, so React didn't update the UI.
+// Now, message is stored in state with useState. Updating the state re-renders the component.
