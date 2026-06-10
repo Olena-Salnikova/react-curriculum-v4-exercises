@@ -1,6 +1,7 @@
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 export default function Home({ products }) {
+  const baseUrl = '/lessons/lesson-10';
   return (
     <section>
       <h2>Home</h2>
@@ -41,6 +42,14 @@ export default function Home({ products }) {
             <p style={{ margin: 0 }}>
               <strong>${p.price.toFixed(2)}</strong>
             </p>
+
+            {/* Link to dynamic product route */}
+            <Link
+              to={`${baseUrl}/products/${p.id}`}
+              style={{ color: '#0066cc', textDecoration: 'underline' }}
+            >
+              View Details
+            </Link>
           </article>
         ))}
       </div>
